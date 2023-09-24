@@ -1,6 +1,8 @@
 # Turtle Crossing Game
 
-![Turtle Crossing Game Logo](./assets/turtle.png)
+<p align="center">
+  <img src="./assets/turtle.png" alt="Snake Game Logo" height="100">
+</p>
 
 ## Overview
 
