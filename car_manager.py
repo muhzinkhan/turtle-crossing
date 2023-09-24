@@ -1,12 +1,16 @@
+import os
+from turtle import Screen
 from turtle import Turtle
 import random
 
 CAR_LIMITS = 18
-COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
+CAR_LIST = ["red.gif", "orange.gif", "yellow.gif", "green.gif", "blue.gif", "purple.gif", "cyan.gif", "pink.gif"]
 STARTING_POSITION = (random.randint(-300, 300), random.randint(-250, 300))
 RESET_POSITION = (300, random.randint(-250, 300))
 STARTING_MOVE_DISTANCE = 2
-MOVE_INCREMENT = 2
+MOVE_INCREMENT = 1
+
+screen = Screen()
 
 
 class CarManager(Turtle):
@@ -20,8 +24,9 @@ class CarManager(Turtle):
     def create(self):
         for i in range(1, CAR_LIMITS):
             i = Turtle()
-            i.color(COLORS[random.randint(0, 5)])
-            i.shape("square")
+            image = os.path.expanduser(f"assets/car_list/{CAR_LIST[random.randint(0, 7)]}")
+            screen.addshape(image)
+            i.shape(image)
             i.shapesize(stretch_len=2)
             i.penup()
             i.setheading(180)
